@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://org.chinpon.madness/Card" xmlns:tns="http://org.chinpon.madness/Card"
+	elementFormDefault="qualified">
+	<xs:complexType name="card">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"></xs:element>
+			<xs:element name="description" type="xs:string"></xs:element>
+			<xs:element name="type" type="tns:type"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Exploration"></xs:enumeration>
+			<xs:enumeration value="Spell"></xs:enumeration>
+			<xs:enumeration value="StartingItem"></xs:enumeration>
+			<xs:enumeration value="Trait"></xs:enumeration>
+			<xs:enumeration value="Lock"></xs:enumeration>
+			<xs:enumeration value="Obstacle"></xs:enumeration>
+			<xs:enumeration value="Mythos"></xs:enumeration>
+			<xs:enumeration value="Trauma"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:room="ttp://org.chinpon.madness/Room"
+	targetNamespace="http://org.chinpon.madness/History" xmlns:tns="http://org.chinpon.madness/History"
+	elementFormDefault="qualified">
+	<xs:import schemaLocation="Room.xsd" 
+               namespace="http://org.chinpon.madness/Room"/>
+	<xs:element name="history">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="intro" type="xs:string" />
+				<xs:element name="objectives">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="objective">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="description"></xs:element>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="rooms">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="room" type="room:room"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

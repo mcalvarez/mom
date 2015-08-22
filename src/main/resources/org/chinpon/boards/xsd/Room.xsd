@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:card="http://org.chinpon.madness/Card" targetNamespace="http://www.example.org/Room"
+	xmlns:tns="http://www.example.org/Room" elementFormDefault="qualified">
+	<xs:import schemaLocation="Card.xsd" namespace="http://org.chinpon.madness/Card" />
+	<xs:complexType name="room">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"></xs:element>
+			<xs:element name="description" type="xs:string"></xs:element>
+			<xs:element name="effects">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="effect">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="name" type="xs:string"></xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="cards">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="card" type="card:card"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="contiguous">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="room" type="xs:integer"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:integer"></xs:attribute>
+	</xs:complexType>
+</xs:schema>
